@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
             addNickname(it)
         }
 
-        findViewById<Button>(R.id.done_button).setOnClickListener {
+        findViewById<Button>(R.id.nickname_text).setOnClickListener {
             updateNickname(it)
         }
     }
@@ -40,6 +40,10 @@ class MainActivity : AppCompatActivity() {
 
         val doneButton = findViewById<Button>(R.id.done_button)
         doneButton.visibility = View.VISIBLE
+
+        editText.requestFocus()
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.showSoftInput(editText,0)
 
     }
 
